@@ -1,0 +1,10 @@
+.pos{
+    border: 1px solid  black ;
+    background-color: chartreuse;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 100px;
+    bottom: 200px;
+    
+}
