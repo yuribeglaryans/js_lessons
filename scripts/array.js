@@ -5,7 +5,7 @@ var arr3 = Array.of(2);
 //var listItems = document.querySelectorAll("li");
 //console.log(listItems);
 var arr4 = Array.from("Hello");
-//console.log(arr4);
+console.log(arr4);
 // Adds element to the array from the end
 arr.push(56);
 //console.log(arr);
@@ -23,4 +23,4 @@ var index = arr.indexOf(5);
 var lastIndex = arr.lastIndexOf(5);
 //console.log(lastIndex);
 var concatedArr = arr.concat(arr4);
-console.log(concatedArr);
+//console.log(concatedArr);
