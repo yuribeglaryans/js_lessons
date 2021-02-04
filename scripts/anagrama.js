@@ -5,7 +5,7 @@ function anagram(str1,str2)
         return false;
     }
      let arr1=Array.from(str1).sort();//sortirvka
-     let arr2=Array.from(str1).sort();//sortirvka
+     let arr2=Array.from(str2).sort();//sortirvka
 
         for (let i=0; i<arr1.length; i++)
         {
@@ -18,4 +18,4 @@ function anagram(str1,str2)
 }
 console.log(anagram('mard','dram'));
 console.log(anagram("cinema","iceman"));
-console.log(anagram("hello","helo"));
+console.log(anagram("halo","helo"));
