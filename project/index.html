@@ -5,25 +5,29 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=2, initial-scale=1.0">
         <link rel="stylesheet" href="style/style.css">
+       
         <title>Document</title>
     </head>
     <body>
-        <div class="header">
+        <script src="scripts/app.js"></script>
+        <button></button>
+        <div id="header">
             <div class="header_section">
                 <div class="header_item">
                     <p>Favorite Movies</p>
                 </div>
-               
             </div>    
-            <div class="header_item"> 
-                <button class="button">ADD MOVIE</button>
+            <div class="header_but"> 
+                <button id="add_but">ADD MOVIE</button>
             </div>
         </div>
-        <div class="main">
-            <p>Your personal movie database!</p>
-        </div>
-        <div class="ul">
-            <ul>
+        <main>
+            <section id="entry-text" class="card">
+              <p>Your personal movie database!</p>
+            </section>
+            <ul id="movie-list"></ul>
+          </main>
+        <div class="modal" id="add-modal">           
                 <form action="">
                     <label for="lname">Movie Title</label>
                     <br>
@@ -35,9 +39,11 @@
                     <br>
                     <input type="number" name="raiting" min="1" max="5" >
                     <br>
-                    <div class="but"><button class="whbut">Cancel</button> <button class="blbut">Add</button></div>
+                    <div class="but">
+                         <button class="whbut">Cancel</button>
+                         <button class="blbut">Add</button>
+                    </div>
                 </form>
-            </ul>
         </div>
     </body>
     </html>

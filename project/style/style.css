@@ -1,4 +1,4 @@
-.header{
+#header{
     display: flex;
     justify-content: space-between;
     padding: 3px;
@@ -15,8 +15,13 @@
     padding: 10px 15px;
     font-size: 20px;
     margin-left: 5px;
+}.header_but{
+    padding: 10px 15px;
+    font-size: 20px;
+    margin-left: 5px;
 }
-.button{
+
+#add_but{
     background-color:orange;
     color:#fff;
     border: 1px solid orange;
@@ -31,7 +36,7 @@
     border: 1px solid #f3cc4b;
     color: #a45807;
 }
-.main {
+.card{
     display: flex;
     border: 1px solid;
     border-radius:4%;
@@ -43,13 +48,8 @@
     padding: 10px;
     width: 30%;
 }
-/* ul{
-    visibility: hidden;
-} */
-/* .main>p{
-    visibility: hidden; 
-} */    
-.ul{
+ 
+.modal{
     display:flex;
     justify-content: center;
     border: 1px solid;
@@ -58,7 +58,13 @@
     margin: 0 auto;
     margin-top: 20px;
     width: 31.4%;
+    display: none;
 }
+  
+.modal.visible {
+    display: block;
+    animation: fade-slide-in 0.3s ease-out forwards;
+  }  
 input{
     width: 100%;
     margin: 0 auto;
@@ -82,4 +88,8 @@ input{
     background-color: white;
     border: 1px solid  white;
     color: blue;
+} 
+.whbut:hover,
+.whbut:active {
+  background: #aec6f8;
 }
