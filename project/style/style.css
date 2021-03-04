@@ -1,4 +1,10 @@
-#header{
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+  }
+  #header{
     display: flex;
     justify-content: space-between;
     padding: 3px;
@@ -15,7 +21,8 @@
     padding: 10px 15px;
     font-size: 20px;
     margin-left: 5px;
-}.header_but{
+}
+.header_but{
     padding: 10px 15px;
     font-size: 20px;
     margin-left: 5px;
@@ -31,7 +38,7 @@
     margin-left: 5px;
     
 }
-.button:hover{
+#add_but:hover{
     background-color: #f3cc4b;
     border: 1px solid #f3cc4b;
     color: #a45807;
@@ -43,38 +50,61 @@
     box-shadow: -4px 3px #d8d8d8;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 27px;
     margin: 0 auto;
     margin-top: 10px;
     padding: 10px;
-    width: 30%;
+    width: 45%;
 }
- 
+
+#backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+  }
+  
+   #backdrop.visible {
+    display: block;
+    pointer-events: all;
+  } 
 .modal{
-    display:flex;
+    /* display:flex; */
     justify-content: center;
     border: 1px solid;
     border-radius:4%;
     box-shadow: -4px 3px #d8d8d8;
+    font-size: 27px;
+    padding: 0.4rem 0.2rem;
     margin: 0 auto;
     margin-top: 20px;
-    width: 31.4%;
+    width: 45%;
     display: none;
+  
 }
   
+
 .modal.visible {
     display: block;
     animation: fade-slide-in 0.3s ease-out forwards;
   }  
 input{
-    width: 100%;
-    margin: 0 auto;
+    width:100%;
+    margin: 1px auto;
 }
 .but{
     display: flex;   
+    justify-content: flex-end;
     margin: 5px;
     position: sticky;
     left: 100px;
     top: 150px;
+     
 }
 .but>button{
     margin: 2px;
@@ -83,13 +113,103 @@ input{
     background-color: #00329e;
     border: 1px solid #00329e;
     color: white;
+    font-size: 27px;   
 }
 .whbut{
     background-color: white;
     border: 1px solid  white;
     color: blue;
+    font-size: 27px;   
 } 
 .whbut:hover,
 .whbut:active {
   background: #aec6f8;
 }
+
+  input {
+    font: inherit;
+    border: 1px solid #ccc;
+    padding: 0.4rem 0.2rem;
+    color: #383838;
+  }
+  
+  input:focus {
+    outline: none;
+    background: #fff1c4;
+  } 
+  .movie-element {
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 10px;
+    display: flex;
+    width: 45%;
+  }
+  
+  .movie-element h2,
+  .movie-element p {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  
+  .movie-element h2 {
+    color: #383838;
+    margin-bottom: 1rem;
+  }
+  
+  .movie-element p {
+    color: white;
+    display: inline;
+    background: #f67722;
+    padding: 0.25rem 1rem;
+    border-radius: 15px;
+  }
+  
+  .movie-element__image {
+    flex: 1;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+  }
+  
+  .movie-element__image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .movie-element__info {
+    flex: 2;
+    padding: 1rem;
+  }
+  .modal__title{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    background-color: #00329e;
+    color: cornsilk;
+    margin-top: 0px;
+    border-radius:4%;
+  }
+  .btn--passive {
+    color: #00329e;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .btn--passive:hover,
+  .btn--passive:active {
+    background: #aec6f8;
+  }
+  
+  .btn--danger {
+    background: #d30808;
+    color: white;
+    border-color: #d30808;
+  }
+  
+  .btn--danger:hover,
+  .btn--danger:active {
+    background: #ff3217;
+    border-color: #ff3217;
+  }

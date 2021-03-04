@@ -1,9 +1,9 @@
-const btn=document.querySelector("button");
-
+const btn=document.querySelector('button');
+console.log(btn)
 //old style
-// btn.onclick = function () {
-//     alert("I am clicked")
-// }
+btn.onclick = function () {
+    alert("I am clicked")
+}
 
 
 // const btnClickHander= ()=> {
@@ -17,17 +17,15 @@ const btn=document.querySelector("button");
 // btn.onclick=otherClick;
 
 
+//  const btnClickHandler= ()=> {
+//     alert("I am clicked")
+//  };
 
+// const otherClick = () =>{
+//     console.log("hello")
+// };
 
-const btnClickHandler= ()=> {
-    alert("I am clicked")
-};
-
-const otherClick = () =>{
-    console.log("hello")
-};
-
-btn.addEventListener("click", btnClickHandler);
+// btn.addEventListener("click", btnClickHandler);
 //btn.removeEventListener()
 
 

@@ -6,30 +6,56 @@ const postList = document.querySelector("ul");
 
 function sendHTTPRequest(method, url, data) {
   const promise = new Promise((resolve, reject) => {
-    const httpRq = new XMLHttpRequest();
+  // const httpRq = new XMLHttpRequest();
+  // httpRq.setRequestHeader("Content-Type", "appliction/json")
+  //
 
-    httpRq.open(method, url);
+  //   httpRq.open(method, url);
 
-    httpRq.responseType = "json";
+  //   httpRq.responseType = "json";
 
-    httpRq.onload = function () {
-      //const postList = JSON.parse(httpRq.response);
-      if (httpRq.status >= 200 && httpRq.status < 300) {
-        resolve(httpRq.response);
-      } else {
-        reject(new Error("Somthig went worng"));
-      }
-    };
-    httpRq.onerror = function () {
-      reject(new Error("Somthig went worng"));
-    };
-    httpRq.send(JSON.stringify(data));
+  //   httpRq.onload = function () {
+  //     //const postList = JSON.parse(httpRq.response);
+  //     if (httpRq.status >= 200 && httpRq.status < 300) {
+  //       resolve(httpRq.response);
+  //     } else {
+  //       reject(new Error("Somthig went worng"));
+  //     }
+  //   };
+  //   httpRq.onerror = function () {
+  //     reject(new Error("Somthig went worng"));
+  //   };
+  //   httpRq.send(JSON.stringify(data));
   });
-  return promise;
+  //return promise;
+
+  return fetch(url,{
+    method: method,
+    body:data,
+   // body: JSON.stringify(data),
+    // headers: {
+    //   "Content-Type": "appliction/json"
+    // }
+  }).then(response=>{
+    // response.text();
+    if(response.status >= 200 && response.status < 300){
+      return response.json();
+    }
+    else{
+      response.json().then(errData=>{
+        console.log(errData);
+         throw new Error ("Something went wrong -in server side");
+      });
+    }
+  })
+  .catch(err=>{
+    console.log(err);
+    throw new Error ("Something went wrong ");
+  })
 }
 
 async function fetchPosts() {
-  try {
+ try {
     const respnonsData = await sendHTTPRequest(
       "GET",
       "https://jsonplaceholder.typicode.com/posts"
@@ -55,7 +81,14 @@ async function createPost(title, content) {
     userId: userId,
   };
 
-  sendHTTPRequest("POST", "https://jsonplaceholder.typicode.com/posts", post);
+  const fd=new FormData(form)//mtnel googleic nayel
+  // fd.append('title',title);
+  // fd.append('body',content);
+  fd.append('userID',userId);
+
+
+
+  sendHTTPRequest("POST", "https://jsonplaceholder.typicode.com/posts", fd);
 }
 
 fetchBtn.addEventListener("click", fetchPosts);
